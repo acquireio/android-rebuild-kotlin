@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    tools:context=".DetailActivity">
+
+    <TextView
+        android:id="@+id/txtTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="15dp"
+        android:drawableLeft="@drawable/ic_arrow"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:clickable="true"
+        android:onClick="backPressed"
+        android:text="@string/detailed_analytics"
+        android:textColor="@color/black"
+        android:textSize="22sp"
+        android:drawableStart="@drawable/ic_arrow"
+        android:focusable="true" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="250dp"
+        android:layout_height="35dp"
+        android:layout_below="@+id/txtTitle"
+        android:layout_marginTop="10dp"
+        app:tabGravity="fill"
+        app:tabIndicatorColor="#585AFF"
+        app:tabIndicatorFullWidth="false"
+        app:tabMaxWidth="0dp"
+        app:tabMinWidth="0dp"
+        app:tabMode="fixed"
+        app:tabTextAppearance="@style/MyCustomTextAppearance" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/viewPager"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_above="@+id/layBottom"
+        android:layout_below="@+id/tabLayout"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+
+    <include
+        android:id="@+id/layBottom"
+        layout="@layout/bottom_bar"
+        android:layout_width="match_parent"
+        android:layout_height="83dp"
+        android:layout_alignParentBottom="true" />
+
+</RelativeLayout>
